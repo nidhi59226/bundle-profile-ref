@@ -1,0 +1,55 @@
+{
+  "data": {
+    "user": {
+      "addresses": [
+        {
+          "country": "USA",
+          "locality": "Test",
+          "streetAddress": "Line 1 Blvd Line 2 Rd",
+          "postalCode": "07272060",
+          "region": "tn"
+        }
+      ],
+      "preferredLanguage": "en-US",
+      "emails": [
+        {
+          "value": "john.smith@mail.com"
+        }
+      ],
+      "name": {
+        "familyName": "John",
+        "givenName": "Smith"
+      },
+      "userId": "user1235",
+      "userName": "john@gmail.com",
+      "dateOfBirth": "1990-06-25"
+    },
+    "products": [
+      {
+        "product": "rewards",
+        "accounts": [
+          {
+            "pan": "5412167896000005",
+            "nameOnCard": "SALLY CARDHOLDER",
+            "cardExpiryDate": "02/2024",
+            "cvcCode": "999",
+            "brand": "Mastercard",
+            "productLine": "string",
+            "primary": true,
+            "object": {
+              "accountStatusCode": 1
+            }
+          }
+        ],
+        "object": {
+          "acceptPromoEmail": true,
+          "acceptPromoSMS": true,
+          "bankProductCode": "ABMBPCC1",
+          "bankCustomerNumber": "26326444454",
+          "programIdentifier": "PROGIDEN5870",
+          "ica": 1216
+        }
+      }
+    ]
+  }
+}

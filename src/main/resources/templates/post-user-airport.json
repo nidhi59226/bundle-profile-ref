@@ -1,0 +1,45 @@
+{
+  "data": {
+    "user": {
+      "addresses": [
+        {
+          "country": "BRA",
+          "locality": "Guarulhos",
+          "streetAddress": "Rua Francisco Pereira da Silva 1480",
+          "postalCode": "07272060",
+          "region": "SP"
+        }
+      ],
+      "preferredLanguage": "pt-BR",
+      "emails": [
+        {
+          "value": "john.smith@mail.com"
+        }
+      ],
+      "name": {
+        "familyName": "John",
+        "givenName": "Smith"
+      },
+      "userId": "user234",
+      "userName": "john@gmail.com"
+    },
+    "products": [
+      {
+        "product": "airport",
+        "accounts": [
+          {
+            "pan": "5412167896000005",
+            "nameOnCard": "John Q Smith",
+            "cardExpiryDate": "02/2022",
+            "cvcCode": "876",
+            "object": {
+              "accountType": "JointMember",
+              "ica": 1017,
+              "cardProductType": "Black"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

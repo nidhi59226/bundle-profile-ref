@@ -1,0 +1,54 @@
+{
+  "patch": [
+    {
+      "op": "replace",
+      "path": "$",
+      "from": "string",
+      "value": {
+        "data": {
+          "user": {
+            "addresses": [
+              {
+                "country": "BRA",
+                "locality": "city",
+                "streetAddress": "123 Main St./n Suite 20",
+                "type": "work"
+              }
+            ],
+            "emails": [
+              {
+                "type": "work",
+                "value": "sally.cardholder123@mail.com"
+              }
+            ],
+            "name": {
+              "familyName": "Cardholder",
+              "givenName": "Sally05"
+            },
+            "phoneNumbers": [
+              {
+                "type": "home",
+                "value": "+16367222222"
+              },
+              {
+                "type": "mobile",
+                "value": "+16367222222"
+              }
+            ],
+            "preferredLanguage": "en-US"
+          },
+          "products": [
+            {
+              "product": "specialpay",
+              "accounts": [
+                {
+                  "pan": "5111655316411020"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

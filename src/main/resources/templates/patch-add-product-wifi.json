@@ -1,0 +1,59 @@
+{
+  "patch": [
+    {
+      "op": "add",
+      "path": "$",
+      "from": "string",
+      "value": {
+        "data": {
+          "user": {
+            "active": true,
+            "addresses": [
+              {
+                "country": "BRA",
+                "locality": "Guarulhos",
+                "streetAddress": "Rua Francisco Pereira da Silva 1480",
+                "postalCode": "07272060",
+                "region": "SP"
+              }
+            ],
+            "preferredLanguage": "en-US",
+            "emails": [
+              {
+                "value": "john5412167896000045.smith@gmail.com"
+              }
+            ],
+            "name": {
+              "familyName": "Smith",
+              "givenName": "Johnathon"
+            },
+            "userId": "user234",
+            "userName": "john5412167896000045@gmail.com"
+          },
+          "products": [
+            {
+              "accounts": [
+                {
+                  "cardExpiryDate": "02/2022",
+                  "pan": "5412167896000045",
+                  "cvcCode": "876",
+                  "nameOnCard": "John F Smith",
+                  "object": {
+                    "accountType": "JointMember",
+                    "cardProductType": "black",
+                    "ica": 1017
+                  }
+                }
+              ],
+              "object": {
+                "username": "boingouser5412167896000045",
+                "password": "boingopwd"
+              },
+              "product": "wifi"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

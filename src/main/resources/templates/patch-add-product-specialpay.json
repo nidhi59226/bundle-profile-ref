@@ -1,0 +1,55 @@
+{
+  "patch": [
+    {
+      "op": "add",
+      "path": "$",
+      "from": "string",
+      "value": {
+        "data": {
+          "user": {
+            "active": true,
+            "addresses": [
+              {
+                "country": "BRA",
+                "locality": "Guarulhos",
+                "streetAddress": "Rua Francisco Pereira da Silva 1480",
+                "postalCode": "07272060",
+                "region": "SP"
+              }
+            ],
+            "preferredLanguage": "en-US",
+            "emails": [
+              {
+                "value": "john.smith@mail.com"
+              }
+            ],
+            "name": {
+              "familyName": "John",
+              "givenName": "Smith"
+            },
+            "userId": "specialpayUser",
+            "userName": "user123partner1233"
+          },
+          "products": [
+            {
+              "product": "specialpay",
+              "accounts": [
+                {
+                  "pan": "5412167896000077",
+                  "nameOnCard": "John Q Smith",
+                  "cardExpiryDate": "02/2022",
+                  "cvcCode": "876",
+                  "object": {
+                    "accountType": "SingleMember",
+                    "ica": "1216",
+                    "cardProductType": "black"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

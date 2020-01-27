@@ -1,0 +1,33 @@
+{
+  "patch": [
+    {
+      "op": "add",
+      "path": "$.data.products[?(@.product=='')].account",
+      "from": "string",
+      "value": {
+        "accounts": [
+          {
+            "ica": "1017",
+            "cvcCode": "876",
+            "cardProductType": "Black",
+            "pan": "5412167896000089",
+            "cardExpiryDate": "02/2022",
+            "nameOnCard": "John Q Smith",
+            "accountType": "SingleMember",
+            "object": {
+              "firstName": "Johnathon",
+              "lastName": "Smitherines",
+              "streetAddress": "Rua Francisco Pereira da Silva 1480",
+              "locality": "Guarulhos",
+              "region": "SP",
+              "postalCode": "07272060",
+              "country": "BRA",
+              "email": "johnSmith5412167896000089@mail.com",
+              "userOffersId": "759874278490"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

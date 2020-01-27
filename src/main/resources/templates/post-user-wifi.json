@@ -1,0 +1,49 @@
+{
+  "data": {
+    "user": {
+      "addresses": [
+        {
+          "country": "BRA",
+          "locality": "Guarulhos",
+          "streetAddress": "Rua Francisco Pereira da Silva 1480",
+          "postalCode": "07272060",
+          "region": "SP"
+        }
+      ],
+      "preferredLanguage": "en-US",
+      "emails": [
+        {
+          "value": "john.smith@mail.com"
+        }
+      ],
+      "name": {
+        "familyName": "John",
+        "givenName": "Smith"
+      },
+      "userId": "user234",
+      "userName": "jsmith123"
+    },
+    "products": [
+      {
+        "accounts": [
+          {
+            "cardExpiryDate": "02/2022",
+            "pan": "5412167896000005",
+            "cvcCode": "876",
+            "nameOnCard": "John Smith",
+            "object": {
+              "accountType": "JointMember",
+              "cardProductType": "black",
+              "ica": 1017
+            }
+          }
+        ],
+        "object": {
+          "username": "jsmith123",
+          "password": "kIy5R5079Qv"
+        },
+        "product": "wifi"
+      }
+    ]
+  }
+}

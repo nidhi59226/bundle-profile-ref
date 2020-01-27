@@ -1,0 +1,42 @@
+{
+  "data": {
+    "user": {
+      "addresses": [
+        {
+          "postalCode": "07272060"
+        }
+      ],
+      "preferredLanguage": "en-US",
+      "emails": [
+        {
+          "value": "john.smith@mail.com"
+        }
+      ],
+      "name": {
+        "familyName": "John",
+        "givenName": "Smith"
+      },
+      "userId": "user1235",
+      "userName": "john5412167896000005@gmail.com"
+    },
+    "products": [
+      {
+        "product": "offers",
+        "accounts": [
+          {
+            "pan": "5412167896000005",
+            "nameOnCard": "John Q Smith",
+            "cardExpiryDate": "02/2022",
+            "cvcCode": "876",
+            "object": {
+              "accountType": "JointMember",
+              "ica": "1017",
+              "cardProductType": "black",
+              "userOffersId": "759874278428"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
