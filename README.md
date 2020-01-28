@@ -66,41 +66,6 @@ Then manually install the following JARs:
 * `target/bundle_client-1.0.0.jar`
 * `target/lib/*.jar`
 
-## Getting Started
-
-Please follow the [installation](#installation) instruction and execute the following Java code:
-
-```java
-
-// Import classes:
-import com.mastercard.developer.bundle_client.ApiClient;
-import com.mastercard.developer.bundle_client.ApiException;
-import com.mastercard.developer.bundle_client.Configuration;
-import com.mastercard.developer.bundle_client.models.*;
-import com.mastercard.developer.bundle_client.api.BundleProfileApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.mastercard.com/bundle/profile");
-
-    BundleProfileApi apiInstance = new BundleProfileApi(defaultClient);
-    BundleUser body = new BundleUser(); // BundleUser | Bundle Profile body
-    String xClientCorrelationId = "xClientCorrelationId_example"; // String | Unique request identifier from the client, usually a Version 4 UUID string (36 characters long including dashes, such as \"f6fd03c6-2dfe-46ea-99f9-6fd7bc34d8d8\")
-    try {
-      BundleUserResponse result = apiInstance.createUser(body, xClientCorrelationId);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling BundleProfileApi#createUser");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-
-```
 
 ## Documentation for API Endpoints
 
@@ -110,7 +75,6 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *BundleProfileApi* | [**createUser**](docs/BundleProfileApi.md#createUser) | **POST** /users | Create Profile
 *BundleProfileApi* | [**patchUser**](docs/BundleProfileApi.md#patchUser) | **POST** /users/{user_id}/patch | Partially Update Profile
-*BundleProfileApi* | [**readConsent**](docs/BundleProfileApi.md#readConsent) | **GET** /users/{user_id}/products/{product}/consents | Find Consent by Id and product
 *BundleProfileApi* | [**readUser**](docs/BundleProfileApi.md#readUser) | **GET** /users/{user_id} | Find User by Id
 
 
@@ -153,4 +117,53 @@ It's recommended to create an instance of `ApiClient` per thread in a multithrea
 ## Author
 
 Digital_Enablement_Team_3@mastercard.com
+
+Steps to run the application from command line
+
+.Create a new project from Mastercard DevZone - stage.developer.mastercard.com or developer.mastercard.com
+
+.Select "MastercardON" from Choose API dropdown and hit continue.
+
+.Get Sandbox keys and store your .p12 certificate along with the readme/documentation. Place the .p12 file in the src/main/resources folder.
+
+.Please save this Sandbox Keys, .p12, key store password and alias as you are going to use these to run the application.
+
+.Clone this repository and set up as Maven project
+
+.Update the following keys in application.properties file
+
+mastercard.airport.ref.app.consumer.key: This can be found in the project you created on developerZone
+mastercard.airport.ref.app.keystore.path: Path where you saved your certs i.e., .p12 file you received while creating a project
+mastercard.airport.ref.app.keystore.password: This is the password you get with Sandbox cert.
+
+Example:
+
+mastercard.airport.ref.app.url = https://stage.developer.mastercard.com
+mastercard.airport.ref.app.consumer.key = Abcdfefgjhilklmnopqrstuvwxyz-dxcq_zD7IiPa0df175e!22a7fddba56e800000000000000000
+mastercard.airport.ref.app.keystore.path = C:\path\provided.p12
+mastercard.airport.ref.app.keystore.password = pwd
+mastercard.airport.ref.app.keystore.alias = alias
+
+.Do a clean build either through IDE or command prompt, if you are doing it through command prompt then the below command should be executed in the directory which contains this repository's pom file Eg: mvn clean install
+
+. Run the application using below command
+   Eg: java -jar path of the Jar relative to the current directory/bundle_client-1.0.0.jar <argument>
+   
+   Argument: An argument which defines the feature user wants to run through command line. If you don't specify this argument, it will run all the features(createUser,ReadUser,UpdateUser(product,account)	) one after the other
+   
+   . createUser - Enroll User for all the products
+   . readUser   - Get User enrolled for the products 
+   . addProduct - add product to the enrolled user.
+   . addAccount - add account to the enrolled user.
+   . removeAccount - remove Account for a given user.
+   . replaceAccount - replaceAccount for a given user
+   . replaceUser - update the user deatils.
+   
+   
+     
+   
+   
+
+
+
 
