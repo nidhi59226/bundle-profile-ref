@@ -80,29 +80,29 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Models
 
- - [Account](docs/Account.md)
- - [Address](docs/Address.md)
- - [BundleUser](docs/BundleUser.md)
- - [BundleUserData](docs/BundleUserData.md)
- - [BundleUserPatch](docs/BundleUserPatch.md)
- - [BundleUserResponse](docs/BundleUserResponse.md)
- - [BundleUserResponseData](docs/BundleUserResponseData.md)
- - [BundleUserResponseErrors](docs/BundleUserResponseErrors.md)
- - [Consent](docs/Consent.md)
- - [Email](docs/Email.md)
- - [Error](docs/Error.md)
- - [Errors](docs/Errors.md)
- - [Identification](docs/Identification.md)
- - [Im](docs/Im.md)
- - [Name](docs/Name.md)
- - [PatchDocument](docs/PatchDocument.md)
- - [PatchDocumentValue](docs/PatchDocumentValue.md)
- - [PhoneNumber](docs/PhoneNumber.md)
- - [Photo](docs/Photo.md)
- - [User](docs/User.md)
- - [UserProduct](docs/UserProduct.md)
- - [UserProductResponse](docs/UserProductResponse.md)
- - [UserReadAccountResponse](docs/UserReadAccountResponse.md)
+- [Account](docs/Account.md)
+- [Address](docs/Address.md)
+- [BundleUser](docs/BundleUser.md)
+- [BundleUserData](docs/BundleUserData.md)
+- [BundleUserPatch](docs/BundleUserPatch.md)
+- [BundleUserResponse](docs/BundleUserResponse.md)
+- [BundleUserResponseData](docs/BundleUserResponseData.md)
+- [BundleUserResponseErrors](docs/BundleUserResponseErrors.md)
+- [Consent](docs/Consent.md)
+- [Email](docs/Email.md)
+- [Error](docs/Error.md)
+- [Errors](docs/Errors.md)
+- [Identification](docs/Identification.md)
+- [Im](docs/Im.md)
+- [Name](docs/Name.md)
+- [PatchDocument](docs/PatchDocument.md)
+- [PatchDocumentValue](docs/PatchDocumentValue.md)
+- [PhoneNumber](docs/PhoneNumber.md)
+- [Photo](docs/Photo.md)
+- [User](docs/User.md)
+- [UserProduct](docs/UserProduct.md)
+- [UserProductResponse](docs/UserProductResponse.md)
+- [UserReadAccountResponse](docs/UserReadAccountResponse.md)
 
 
 ## Documentation for Authorization
@@ -120,36 +120,31 @@ Digital_Enablement_Team_3@mastercard.com
 
 Steps to run the application from command line
 
-.Create a new project from Mastercard DevZone - stage.developer.mastercard.com or developer.mastercard.com
+. Create a new project from Mastercard DevZone - stage.developer.mastercard.com or developer.mastercard.com
 
-.Select "MastercardON" from Choose API dropdown and hit continue.
+. Select "MastercardON" from Choose API dropdown and hit continue.
 
-.Get Sandbox keys and store your .p12 certificate along with the readme/documentation. Place the .p12 file in the src/main/resources folder.
+. Get Sandbox keys and store your .p12 certificate along with the readme/documentation. Place the .p12 file in the src/main/resources folder.
 
-.Please save this Sandbox Keys, .p12, key store password and alias as you are going to use these to run the application.
+. Please save this Sandbox Keys, .p12, key store password and alias as you are going to use these to run the application.
 
-.Clone this repository and set up as Maven project
+. Clone this repository and set up as Maven project
 
-.Update the following keys in application.properties file
-
-mastercard.airport.ref.app.consumer.key: This can be found in the project you created on developerZone
-mastercard.airport.ref.app.keystore.path: Path where you saved your certs i.e., .p12 file you received while creating a project
-mastercard.airport.ref.app.keystore.password: This is the password you get with Sandbox cert.
+. Update the following keys in application.properties file
 
 Example:
 
-mastercard.airport.ref.app.url = https://stage.developer.mastercard.com
-mastercard.airport.ref.app.consumer.key = Abcdfefgjhilklmnopqrstuvwxyz-dxcq_zD7IiPa0df175e!22a7fddba56e800000000000000000
-mastercard.airport.ref.app.keystore.path = C:\path\provided.p12
-mastercard.airport.ref.app.keystore.password = pwd
-mastercard.airport.ref.app.keystore.alias = alias
+mastercard.bundle.client.ref.app.url = https://stage.developer.mastercard.com
+mastercard.bundle.client.ref.app.consumer.key = Abcdfefgjhilklmnopqrstuvwxyz-dxcq_zD7IiPa0df175e!22a7fddba56e800000000000000000
+mastercard.bundle.client.ref.app.keystore.path = C:\path\provided.p12
+mastercard.bundle.client.ref.app.keystore.password = pwd
 
 .Do a clean build either through IDE or command prompt, if you are doing it through command prompt then the below command should be executed in the directory which contains this repository's pom file Eg: mvn clean install
 
 . Run the application using below command
    Eg: java -jar path of the Jar relative to the current directory/bundle_client-1.0.0.jar <argument>
    
-   Argument: An argument which defines the feature user wants to run through command line. If you don't specify this argument, it will run all the features(createUser,ReadUser,UpdateUser(product,account)	) one after the other
+   Argument: An argument which defines the feature user wants to run through command line. If you don't specify this argument, it will run all the features(createUser,ReadUser,UpdateUser(product,account)               ) one after the other
    
    . createUser - Enroll User for all the products
    . readUser   - Get User enrolled for the products 
@@ -158,12 +153,21 @@ mastercard.airport.ref.app.keystore.alias = alias
    . removeAccount - remove Account for a given user.
    . replaceAccount - replaceAccount for a given user
    . replaceUser - update the user deatils.
-   
-   
-     
-   
-   
 
+. User identifiers supported for different products
 
+GET operation
 
+1.	user234 for Products: airport, wifi
+2.	user1235 for Products: rewards, benefits, offers
+3.	specialpayUser for Product: specialpay 
 
+POST operation
+
+    Any user identifier acceptable across products 
+
+. How to refer different product-wise operations
+
+To refer POST operation only for a particular product in place of all products, one needs to edit the post-user-payloads = post-user-wifi.json (only the product/s he wants separated by ,)
+To refer PATCH-ADD operation only for a particular product in place of all products, one needs to edit the patch-add-product-payloads=patch-add-product-wifi (only the product/s he wants separated by ,)
+# bundle-profile-ref
