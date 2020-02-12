@@ -98,6 +98,7 @@ public class RequestHelper{
     }
 
 
+
     public static void loadProperties() {
         if (prop == null || prop.isEmpty()) {
             try (InputStream input = RequestHelper.class.getClassLoader()
@@ -113,86 +114,6 @@ public class RequestHelper{
         }
     }
 
-    public static BundleUserPatch createReplaceAccountPayload() {
-        BundleUserPatch bundleUserPatch = new BundleUserPatch();
-        List<PatchDocument> patchDocumentList = new ArrayList<PatchDocument>();
-        PatchDocument patchDocument = new PatchDocument();
-        PatchDocumentValue patchDocumentValue = new PatchDocumentValue();
-        BundleUserData bundleUserData = new BundleUserData();
-        UserProduct userProduct = new UserProduct();
-        Account account = new Account();
-        account.setPan("123456789909090");
-        account.setNameOnCard("XYZ Systems");
-        account.setCardExpiryDate("02/2020");
-        account.setCvcCode("123");
-        List<Account> accounts = new ArrayList<>();
-        accounts.add(account);
-        userProduct.setAccounts(accounts);
-        List<UserProduct> products = new ArrayList<>();
-        products.add(userProduct);
-        bundleUserData.setProducts(products);
-        patchDocument.setOp("replace");
-        patchDocument.setPath("$.data.products[?(@.product=='')].accounts[?(@.pan=='123456789909089')]");
-        patchDocument.setFrom("string");
-        patchDocument.setValue(patchDocumentValue);
-        patchDocumentValue.setData(bundleUserData);
-        patchDocumentList.add(patchDocument);
-        bundleUserPatch.setPatch(patchDocumentList);
-        return bundleUserPatch;
-    }
-
-    public static BundleUserPatch createAddAccountPayload() {
-        BundleUserPatch bundleUserPatch = new BundleUserPatch();
-        List<PatchDocument> patchDocumentList = new ArrayList<PatchDocument>();
-        PatchDocument patchDocument = new PatchDocument();
-        PatchDocumentValue patchDocumentValue = new PatchDocumentValue();
-        BundleUserData bundleUserData = new BundleUserData();
-        UserProduct userProduct = new UserProduct();
-        Account account = new Account();
-        account.setPan("123456789909089");
-        account.setIca(1017L);
-        account.setCvcCode("876");
-        account.setCardExpiryDate("02/2022");
-        account.setNameOnCard("nameOnCard");
-        account.setAccountType("accountType");
-        Object object = new Object();
-        account.setObject(object);
-        List<Account> accounts = new ArrayList<>();
-        accounts.add(account);
-        patchDocument.setOp("add");
-        patchDocument.setPath("$.data.products[?(@.product=='')].account");
-        patchDocument.setFrom("string");
-        patchDocument.setValue(patchDocumentValue);
-        patchDocumentValue.setAccounts(accounts);
-        patchDocumentList.add(patchDocument);
-        bundleUserPatch.setPatch(patchDocumentList);
-        return bundleUserPatch;
-    }
-
-    public static BundleUserPatch createRemoveAccountPayload() {
-        BundleUserPatch bundleUserPatch = new BundleUserPatch();
-        List<PatchDocument> patchDocumentList = new ArrayList<PatchDocument>();
-        PatchDocument patchDocument = new PatchDocument();
-        PatchDocumentValue patchDocumentValue = new PatchDocumentValue();
-        BundleUserData bundleUserData = new BundleUserData();
-        UserProduct userProduct = new UserProduct();
-        Account account = new Account();
-        account.setPan("123456789909089");
-        List<Account> accounts = new ArrayList<>();
-        accounts.add(account);
-        userProduct.setAccounts(accounts);
-        List<UserProduct> products = new ArrayList<>();
-        products.add(userProduct);
-        bundleUserData.setProducts(products);
-        patchDocument.setOp("remove");
-        patchDocument.setPath("$.data.products[?(@.product=='')].accounts[?(@.pan=='123456789909089')]");
-        patchDocument.setFrom("string");
-        patchDocument.setValue(patchDocumentValue);
-        patchDocumentValue.setData(bundleUserData);
-        patchDocumentList.add(patchDocument);
-        bundleUserPatch.setPatch(patchDocumentList);
-        return bundleUserPatch;
-    }
 
 
 
